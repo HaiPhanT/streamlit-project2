@@ -4,6 +4,7 @@ import numpy as np
 import csv
 import sys
 import math
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from surprise import Reader, Dataset, SVD, dump
@@ -22,9 +23,12 @@ san_pham_cursor = 0
 def load_data():
     csv.field_size_limit(sys.maxsize)
 
-    df_danh_gia = pd.read_csv('data/Danh_gia.csv')
-    df_khach_hang = pd.read_csv('data/Khach_hang.csv')
-    df_san_pham = pd.read_csv('data/San_pham.csv')
+    # Get the absolute path to the data directory
+    data_dir = os.path.join(os.path.dirname(__file__), "data")
+
+    df_danh_gia = pd.read_csv(os.path.join(data_dir, 'Danh_gia.csv'))
+    df_khach_hang = pd.read_csv(os.path.join(data_dir, 'Khach_hang.csv'))
+    df_san_pham = pd.read_csv(os.path.join(data_dir, 'San_pham.csv'))
 
     return df_danh_gia, df_khach_hang, df_san_pham
 
