@@ -206,9 +206,15 @@ def display_list_san_pham(df_san_pham):
                 st.write(f"Rating: {row_data['diem_trung_binh']}")
                 st.write(f"Category: {row_data['phan_loai']}")
 
-def display_insight(df):
-    st.write("Welcome to the Insight page")
-    st.write("This page is under construction")
+def display_insight(df_danh_gia, df_khach_hang, df_san_pham):
+    khach_hang_tab, danh_gia_tab, san_pham_tab = st.tabs(["Khach_hang", "Danh_gia", "San_pham"])
+
+    with khach_hang_tab:
+        st.write(df_khach_hang.describe())
+    with danh_gia_tab:
+        st.write(df_danh_gia.describe())
+    with san_pham_tab:
+        st.write(df_san_pham.describe())
 
 def display_recommend_by():
     recommend_by = st.selectbox("Recommend by:", ["Similarity", "Price", "Usage", "Brand"])
@@ -274,7 +280,7 @@ def app():
         display_list_san_pham(df_san_pham)
     elif st.session_state.page == PAGES["INSIGHT"]:
         st.title("Insight")
-        display_insight(df_san_pham)
+        display_insight(df_danh_gia, df_khach_hang, df_san_pham)
     elif st.session_state.page == PAGES["COLLABORATIVE_FILTERING"]:
         st.title("Collaborative Filtering")
         st.write("Welcome to the Collaborative Filtering page")
