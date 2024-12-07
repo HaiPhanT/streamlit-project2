@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+findspark = "*"
+numpy = "==1.26"
+surprise = "*"
+pandas = "*"
+wordcloud = "*"
+scikit-learn = "*"
+underthesea = "*"
+gensim = "*"
+joblib = "*"
+streamlit = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.12"
