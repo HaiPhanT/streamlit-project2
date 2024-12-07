@@ -135,7 +135,7 @@ def get_recommendations(sp_id, cosine_sim, df, recommend_by='Similarity', nums=5
 def build_drawable_sidebar():
     open_login = False
 
-    st.sidebar.title("Select Recommendation System")
+    st.sidebar.title("Navigation")
 
     page = st.sidebar.radio("", list(PAGES.values()))
     st.session_state.page = page
