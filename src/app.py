@@ -145,6 +145,9 @@ def build_drawable_sidebar():
 
     st.sidebar.info(f'Login as {st.session_state.user_name if "user_name" in st.session_state else "Guest"}')
 
+    st.sidebar.title("Instructor")
+    st.sidebar.info("Cô Khuất Thùy Phương")
+
     st.sidebar.title("Authors")
     st.sidebar.info("Trần Thị Kim Hoa")
     st.sidebar.info("Phan Thanh Hải", )
