@@ -254,7 +254,7 @@ def app():
     df_danh_gia, df_khach_hang, df_san_pham = load_data()
 
     model_dir = os.path.join(os.path.dirname(__file__), "models")
-    cosine_model = np.load(os.path.join(model_dir, 'cosine_model.npy'))
+    cosine_model = np.load(os.path.join(model_dir, 'cosine_sim.npy'))
     _, svd_algo = dump.load(os.path.join(model_dir, 'svd_model'))
 
     # pg = st.navigation([st.Page(home_page(df_san_pham), 'home'), st.Page(insight_page(), 'insight')])
