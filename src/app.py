@@ -120,7 +120,7 @@ def get_same_brand_recommendations(sp_id, df, brands_list, nums=3):
 
 def get_recommendations(sp_id, cosine_sim, df, recommend_by='Similarity', nums=5):
     if recommend_by == "Price":
-        return get_same_price_recommendations(sp_id, df, 500_000, nums)
+        return get_same_price_recommendations(sp_id, df, 50_000, nums)
     elif recommend_by == "Usage":
         return get_same_usage_recommendations(sp_id, df, nums)
     elif recommend_by == "Brand":
