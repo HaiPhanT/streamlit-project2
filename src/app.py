@@ -170,7 +170,7 @@ def display_login_form(df_khach_hang):
         st.rerun()
 
 
-def display_recommendations_by_user(user_id, df_danh_gia, df_san_pham, algo, num=10):
+def display_recommendations_by_user(user_id, df_danh_gia, df_san_pham, algo, num=5):
     recommendations = get_recommendations_by_user(user_id, df_danh_gia, algo, num)
 
     st.write("Recommendations:")
